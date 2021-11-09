@@ -1,0 +1,26 @@
+<%- include("../header");%>
+<div class="col-12">
+    
+    <%- include("../error");%>
+    <h1>Productos</h1>
+    <table class="table table-bordered">
+        <thead>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>eliminar</th>
+            <th>editar</th>
+        </thead>
+
+        <tbody>
+            <% productos.forEach(producto =>{ %>
+                <tr>
+                    <td><%= producto.Nombre %></td>
+                    <td><%= producto.precio %></td>
+                    <td> <a href="/productos/eliminar/<%= producto.idProductos%>" class="btn btn-danger">  eliminar </a></td>
+                    <td>  <a href="/productos/editar/<%= producto.idProductos%>" class="btn btn-warning">Editar</a></td>
+                </tr>
+            <% }) %>    
+        </tbody>
+    </table>
+</div>
+<%- include("../footer");%>
